@@ -1,13 +1,10 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS'
+    environment {
+        CI = 'true'
     }
 
-environment{
-    CI='true'
-}
     stages {
         stage('Checkout') {
             steps {
@@ -17,32 +14,33 @@ environment{
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm ci'
-                sh 'npm playwright install --with-deps'
+                bat 'npm ci'
+                bat 'npx playwright install --with-deps'
             }
         }
 
         stage('Run Playwright Tests') {
             steps {
-                sh 'npx playwright test'
+                bat 'npx playwright test'
             }
         }
-        stage('Publish Reports'){
-            steps{
+
+        stage('Publish Reports') {
+            steps {
                 junit 'results.xml'
-                archiveArtifacts artifacts:'playwright-report/**',fingerprint:true
+                archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
             }
         }
     }
 
     post {
-        always{
+        always {
             echo 'Pipeline finished'
         }
-        success{
+        success {
             echo 'Test Passed'
         }
-        failure{
+        failure {
             echo 'Test Failed'
         }
     }
