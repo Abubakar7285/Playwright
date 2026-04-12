@@ -8,11 +8,10 @@ class LoginPage {
         this.loginBtn = page.getByRole("button", { name: 'Login' });
         this.dashboardHeader = page.locator('h6:has-text("Dashboard")');
     }
-
-    async login(user, pass) {
-
+    async goto() {
         await this.page.goto('/');
-        await this.page.waitForLoadState('domcontentloaded');
+    }
+    async login(user, pass) {
         await this.username.fill(user);
         await this.password.fill(pass);
         await this.loginBtn.click();

@@ -1,8 +1,20 @@
-<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="16.786762">
-<testsuite name="login.spec.js" timestamp="2026-04-12T08:03:21.641Z" hostname="chromium" tests="2" failures="0" skipped="0" time="15.567" errors="0">
-<testcase name="verify dashboard loads after login" classname="login.spec.js" time="7.714">
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="84.67543">
+<testsuite name="admin.spec.js" timestamp="2026-04-12T17:38:06.318Z" hostname="chromium" tests="1" failures="0" skipped="0" time="16.015" errors="0">
+<testcase name="open admin" classname="admin.spec.js" time="16.015">
+<system-out>
+<![CDATA[admin page ....
+]]>
+</system-out>
 </testcase>
-<testcase name="navigate to PIM module" classname="login.spec.js" time="7.853">
+</testsuite>
+<testsuite name="leave.spec.js" timestamp="2026-04-12T17:38:06.318Z" hostname="chromium" tests="1" failures="0" skipped="0" time="14.348" errors="0">
+<testcase name="Apply leave" classname="leave.spec.js" time="14.348">
+</testcase>
+</testsuite>
+<testsuite name="PIM.spec.js" timestamp="2026-04-12T17:38:06.318Z" hostname="chromium" tests="2" failures="0" skipped="0" time="53.223" errors="0">
+<testcase name="PIM Module › Add Employee" classname="PIM.spec.js" time="36.152">
+</testcase>
+<testcase name="PIM Module › Search Employee" classname="PIM.spec.js" time="17.071">
 </testcase>
 </testsuite>
 </testsuites>
