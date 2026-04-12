@@ -1,11 +1,11 @@
-const {test,expect}=require('@playwright/test');
-const {LoginPage}=require('../pages/LoginPage');
-const data=require('../testData.json');
+const {test,expect}=require('../fixtures/fixture');
 
-test('Login into OrangeHRM',async({page})=>{
+test('verify dashboard loads after login', async ({ loginPage }) => {
+  await expect(loginPage.dashboardHeader).toHaveText('Dashboard');
+});
 
-    await page.pause();
-    const login=new LoginPage(page);
-    await login.goTo();
-    await login.login(data.username,data.password);
-})
+test('navigate to PIM module', async ({ loginPage }) => {
+  await loginPage.page.click('a[href*="pim"]');
+  await expect(loginPage.page.locator('h6')).toHaveText('PIM');
+});
+

@@ -1,20 +1,23 @@
+const { expect } = require('@playwright/test');
+
 class LoginPage {
     constructor(page) {
         this.page = page;
         this.username = page.getByPlaceholder('Username');
         this.password = page.getByPlaceholder('Password');
         this.loginBtn = page.getByRole("button", { name: 'Login' });
-    }
-
-    async goTo() {
-        await this.page.goto('/');
-        await this.page.waitForLoadState('domcontentloaded');
+        this.dashboardHeader = page.locator('h6:has-text("Dashboard")');
     }
 
     async login(user, pass) {
+
+        await this.page.goto('/');
+        await this.page.waitForLoadState('domcontentloaded');
         await this.username.fill(user);
         await this.password.fill(pass);
         await this.loginBtn.click();
+        await this.page.waitForLoadState('domcontentloaded');
+        await expect(this.dashboardHeader).toBeVisible();
     }
 }
 module.exports = { LoginPage };

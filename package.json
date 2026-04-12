@@ -3,14 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "regression":"npx playwright test",
+    "webTests":"npx playwright test --grep @web",
+    "APITests":"npx playwright test --grep @API"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.5.2"
+    "@types/node": "^25.5.2",
+    "allure-playwright": "^3.7.1"
   },
   "dependencies": {
     "exceljs": "^4.4.0"

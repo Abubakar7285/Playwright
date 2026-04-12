@@ -1,0 +1,8 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="16.786762">
+<testsuite name="login.spec.js" timestamp="2026-04-12T08:03:21.641Z" hostname="chromium" tests="2" failures="0" skipped="0" time="15.567" errors="0">
+<testcase name="verify dashboard loads after login" classname="login.spec.js" time="7.714">
+</testcase>
+<testcase name="navigate to PIM module" classname="login.spec.js" time="7.853">
+</testcase>
+</testsuite>
+</testsuites>
