@@ -10,7 +10,7 @@ class AdminPage {
         await this.menu.click();
     }
     async searchUser() {
-        await console.log("admin page ....")
+        await console.log("admin page ....");
     }
 }
 module.exports = { AdminPage };

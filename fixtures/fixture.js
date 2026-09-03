@@ -1,5 +1,5 @@
 const base = require('@playwright/test');
-const { LoginPage } = require('../pages/LoginPage');
+const { LoginPage }  = require('../pages/LoginPage');
 const { PIMPage } = require('../pages/PIMPage');
 const { LeavePage } = require('../pages/LeavePage');
 const { AdminPage}=require('../pages/AdminPage');
@@ -13,7 +13,6 @@ exports.test = base.test.extend({
         await login.goto();
         await login.login(userData.username, userData.password);
         await use(page);
-
         await page.context().clearCookies();
     },
    
